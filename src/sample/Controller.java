@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import transformation.model.Binary;
 import transformation.model.Decimal;
 
 public class Controller {
@@ -34,8 +35,20 @@ public class Controller {
 //            txtAreaResult.setText((a + b) + "") ;
 //            counter = 0;
 //        }
-        Decimal number = new Decimal(txtFieldCommand.getText());
+
+        if(chkBoxBinary.isSelected()) {
+            Decimal number = new Decimal(txtFieldCommand.getText());
+
+            txtAreaResult.setText(number.convertToBinary());
+        }
+        else {
+            Binary number = new Binary(txtFieldCommand.getText());
+
+            txtAreaResult.setText(number.convertToDecimal());
+        }
         txtFieldCommand.clear();
-        txtAreaResult.setText(number.convertToBinary());
+
+
+
     }
 }

@@ -32,6 +32,7 @@ public class Decimal extends Number implements BinaryConverter{
             numberInBinaryForm+= digits.get(i);
         }
 
+
         return numberInBinaryForm;
     }
 }

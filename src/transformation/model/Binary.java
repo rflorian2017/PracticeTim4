@@ -13,7 +13,13 @@ public class Binary extends Number implements DecimalConverter {
 
     @Override
     public String convertToDecimal() {
-
-        return null;
+        long sum = 0;
+        for(int i = 0; i< value.length(); i ++ ) {
+            int digit = Integer.parseInt(Character.toString(value.charAt(i)));
+            sum += Math.pow(2, i) * digit;
+        }
+        return sum + "";
     }
+
+
 }
